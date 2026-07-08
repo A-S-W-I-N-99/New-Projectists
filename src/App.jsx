@@ -1,7 +1,7 @@
-import NotFound from "./pages/Error/NotFound";
+import TeacherDashboard from "./pages/Dashboard/TeacherDashboard";
 
 function App() {
-  return <NotFound />;
+  return <TeacherDashboard />;
 }
 
 export default App;

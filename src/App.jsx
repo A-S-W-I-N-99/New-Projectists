@@ -1,17 +1,7 @@
-import { Routes, Route } from "react-router-dom";
-
-import StudentLogin from "./pages/Login/StudentLogin";
-import TeacherLogin from "./pages/Login/TeacherLogin";
-import TeacherDashboard from "./pages/Dashboard/TeacherDashboard";
+import NotFound from "./pages/Error/NotFound";
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<StudentLogin />} />
-      <Route path="/teacher-login" element={<TeacherLogin />} />
-      <Route path="/dashboard" element={<TeacherDashboard />} />
-    </Routes>
-  );
+  return <NotFound />;
 }
 
 export default App;

@@ -10,6 +10,9 @@ function App() {
       <Route path="/" element={<StudentLogin />} />
       <Route path="/teacher-login" element={<TeacherLogin />} />
       <Route path="/dashboard" element={<TeacherDashboard />} />
+      <Route path="/manage-faculty" element={<ManageFaculty />} />
+      <Route path="/college-settings" element={<CollegeSettings />} />
+      <Route path="/notification-center" element={<NotificationCenter />} />
     </Routes>
   );
 }

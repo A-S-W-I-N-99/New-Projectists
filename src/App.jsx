@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import StudentLogin from "./pages/Login/StudentLogin";
 import TeacherLogin from "./pages/Login/TeacherLogin";
 import TeacherDashboard from "./pages/Dashboard/TeacherDashboard";
+import ManageFaculty from "./pages/ManageFaculty/ManageFaculty";
 
 function App() {
   return (
@@ -11,8 +12,10 @@ function App() {
       <Route path="/teacher-login" element={<TeacherLogin />} />
       <Route path="/dashboard" element={<TeacherDashboard />} />
       <Route path="/manage-faculty" element={<ManageFaculty />} />
-      <Route path="/college-settings" element={<CollegeSettings />} />
-      <Route path="/notification-center" element={<NotificationCenter />} />
+
+      {/* Future Pages */}
+      {/* <Route path="/college-settings" element={<CollegeSettings />} /> */}
+      {/* <Route path="/notification-center" element={<NotificationCenter />} /> */}
     </Routes>
   );
 }

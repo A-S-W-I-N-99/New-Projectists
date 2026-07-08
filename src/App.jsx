@@ -11,7 +11,10 @@ function App() {
       <Route path="/" element={<StudentLogin />} />
       <Route path="/teacher-login" element={<TeacherLogin />} />
       <Route path="/dashboard" element={<TeacherDashboard />} />
-      <Route path="/college-settings" element={<CollegeSettingsDashboard />}/>
+      <Route
+        path="/college-settings"
+        element={<CollegeSettingsDashboard />}
+      />
     </Routes>
   );
 }

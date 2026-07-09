@@ -8,6 +8,7 @@ import NotificationCenter from "./pages/notification-center/NotificationCenter";
 import FeeStructureManagement from "./pages/fee-structure-management/FeeStructureManagement";
 import GradesTranscript from "./pages/grades-transcript/GradesTranscript";
 import UploadMarks from "./pages/upload-marks/UploadMarks";
+import DegreeAudit from "./pages/degree-audit/DegreeAudit";
 function App() {
   return (
     <Routes>
@@ -19,6 +20,7 @@ function App() {
       <Route path="/fee-structure-management" element={<FeeStructureManagement />}/>
       <Route path="/grades-transcript" element={<GradesTranscript />} />
       <Route path="/upload-marks" element={<UploadMarks />}/>
+      <Route path="/degree-audit" element={<DegreeAudit />} />
     </Routes>
   );
 }

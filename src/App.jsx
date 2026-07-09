@@ -1,5 +1,4 @@
 import {
-  BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -13,7 +12,7 @@ import NotFound from "./pages/Error/NotFound";
 
 function App() {
   return (
-    <BrowserRouter>
+    
       <Routes>
         {/* Login */}
         <Route path="/" element={<StudentLogin />} />
@@ -29,7 +28,7 @@ function App() {
         {/* 404 */}
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    
   );
 }
 

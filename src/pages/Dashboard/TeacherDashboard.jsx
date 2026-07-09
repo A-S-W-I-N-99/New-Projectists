@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Sidebar";
+import Sidebar from "../../components/ManageFaculty/Sidebar";
 import Navbar from "../../components/Navbar";
 import StatCard from "../../components/StatCard";
 import TableRow from "../../components/TableRow";

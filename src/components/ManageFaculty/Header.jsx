@@ -1,4 +1,12 @@
-const Header = () => {
+import { useNavigate } from "react-router-dom";
+import { useFaculty } from "../../context/FacultyContext";
+import { exportFacultyCSV } from "../../utils/exportFacultyCSV";
+
+const Header = ({ searchTerm, setSearchTerm }) => {
+  const navigate = useNavigate();
+
+  const { facultyList } = useFaculty();
+
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 px-8 py-4 flex items-center justify-between">
       {/* Left Section */}
@@ -6,6 +14,7 @@ const Header = () => {
         <h1 className="text-3xl font-bold text-gray-800">
           Manage Faculty
         </h1>
+
         <p className="text-sm text-gray-500 mt-1">
           Manage faculty members, departments and academic information.
         </p>
@@ -18,6 +27,10 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search faculty..."
+            value={searchTerm}
+            onChange={(e) =>
+              setSearchTerm(e.target.value)
+            }
             className="w-72 rounded-xl border border-gray-300 px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
 
@@ -37,8 +50,23 @@ const Header = () => {
           </svg>
         </div>
 
-        {/* Add Faculty Button */}
-        <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-xl font-medium transition">
+        {/* Export CSV */}
+        <button
+          onClick={() =>
+            exportFacultyCSV(facultyList)
+          }
+          className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-xl font-medium transition"
+        >
+          Export CSV
+        </button>
+
+        {/* Add Faculty */}
+        <button
+          onClick={() =>
+            navigate("/add-faculty")
+          }
+          className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-xl font-medium transition"
+        >
           + Add Faculty
         </button>
 
@@ -54,6 +82,7 @@ const Header = () => {
             <h3 className="text-sm font-semibold text-gray-700">
               Admin
             </h3>
+
             <p className="text-xs text-gray-500">
               Super Administrator
             </p>

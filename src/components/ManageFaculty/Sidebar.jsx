@@ -1,60 +1,91 @@
-const menuItems = [
-  { name: "Dashboard", active: false },
-  { name: "Students", active: false },
-  { name: "Faculty", active: true },
-  { name: "Departments", active: false },
-  { name: "Attendance", active: false },
-  { name: "Examinations", active: false },
-  { name: "Settings", active: false },
-];
+import {
+  LayoutDashboard,
+  BookOpen,
+  Calendar,
+  CheckSquare,
+  GraduationCap,
+  Users,
+  Settings,
+  LogOut,
+} from "lucide-react";
 
-const Sidebar = () => {
+// ✅ Correct import
+import SidebarLink from "../SidebarLink";
+
+function Sidebar() {
   return (
-    <aside className="w-64 bg-white shadow-lg border-r border-gray-200 flex flex-col justify-between">
-      {/* Logo */}
+    <aside className="w-64 bg-white border-r border-slate-200 flex flex-col justify-between p-4">
       <div>
-        <div className="px-6 py-6 border-b">
-          <h1 className="text-2xl font-bold text-indigo-600">
-            EduManage
+        <div className="mb-8 px-4">
+          <h1 className="text-xl font-bold text-indigo-700">
+            EduCore Pro
           </h1>
-          <p className="text-xs text-gray-500 mt-1">
-            College Management System
+
+          <p className="text-xs text-slate-500">
+            Campus Management
           </p>
         </div>
 
-        {/* Navigation */}
-        <nav className="mt-6 px-4 space-y-2">
-          {menuItems.map((item) => (
-            <button
-              key={item.name}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-left ${
-                item.active
-                  ? "bg-indigo-600 text-white shadow-md"
-                  : "text-gray-600 hover:bg-gray-100"
-              }`}
-            >
-              <div
-                className={`w-2 h-2 rounded-full ${
-                  item.active ? "bg-white" : "bg-gray-400"
-                }`}
-              ></div>
+        <nav className="space-y-1">
+          <SidebarLink
+            icon={<LayoutDashboard size={20} />}
+            label="Dashboard"
+            to="/dashboard"
+          />
 
-              <span className="font-medium">
-                {item.name}
-              </span>
-            </button>
-          ))}
+          <SidebarLink
+            icon={<BookOpen size={20} />}
+            label="Subjects"
+            to="/subjects"
+          />
+
+          <SidebarLink
+            icon={<Calendar size={20} />}
+            label="Timetable"
+            to="/timetable"
+          />
+
+          <SidebarLink
+            icon={<CheckSquare size={20} />}
+            label="Attendance"
+            to="/attendance"
+          />
+
+          <SidebarLink
+            icon={<GraduationCap size={20} />}
+            label="Grading"
+            to="/grading"
+          />
+
+          <SidebarLink
+            icon={<Users size={20} />}
+            label="Faculty"
+            to="/manage-faculty"
+          />
+
+          <SidebarLink
+            icon={<Users size={20} />}
+            label="Students"
+            to="/students"
+          />
         </nav>
       </div>
 
-      {/* Bottom Section */}
-      <div className="p-5 border-t">
-        <button className="w-full bg-red-500 hover:bg-red-600 text-white py-3 rounded-xl font-semibold transition">
-          Logout
-        </button>
+      <div className="border-t border-slate-200 pt-4 space-y-1">
+        <SidebarLink
+          icon={<Settings size={20} />}
+          label="Settings"
+          to="/settings"
+        />
+
+        <SidebarLink
+          icon={<LogOut size={20} />}
+          label="Logout"
+          to="/"
+        />
       </div>
     </aside>
   );
-};
+}
 
 export default Sidebar;

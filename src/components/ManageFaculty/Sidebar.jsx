@@ -9,7 +9,8 @@ import {
   LogOut,
 } from "lucide-react";
 
-import SidebarLink from "./SidebarLink";
+// ✅ Correct import
+import SidebarLink from "../SidebarLink";
 
 function Sidebar() {
   return (
@@ -29,37 +30,43 @@ function Sidebar() {
           <SidebarLink
             icon={<LayoutDashboard size={20} />}
             label="Dashboard"
-            active
+            to="/dashboard"
           />
 
           <SidebarLink
             icon={<BookOpen size={20} />}
             label="Subjects"
+            to="/subjects"
           />
 
           <SidebarLink
             icon={<Calendar size={20} />}
             label="Timetable"
+            to="/timetable"
           />
 
           <SidebarLink
             icon={<CheckSquare size={20} />}
             label="Attendance"
+            to="/attendance"
           />
 
           <SidebarLink
             icon={<GraduationCap size={20} />}
             label="Grading"
+            to="/grading"
           />
 
           <SidebarLink
             icon={<Users size={20} />}
             label="Faculty"
+            to="/manage-faculty"
           />
 
           <SidebarLink
             icon={<Users size={20} />}
             label="Students"
+            to="/students"
           />
         </nav>
       </div>
@@ -68,11 +75,13 @@ function Sidebar() {
         <SidebarLink
           icon={<Settings size={20} />}
           label="Settings"
+          to="/settings"
         />
 
         <SidebarLink
           icon={<LogOut size={20} />}
           label="Logout"
+          to="/"
         />
       </div>
     </aside>

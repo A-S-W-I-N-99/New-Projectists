@@ -9,6 +9,7 @@ import FeeStructureManagement from "./pages/fee-structure-management/FeeStructur
 import GradesTranscript from "./pages/grades-transcript/GradesTranscript";
 import UploadMarks from "./pages/upload-marks/UploadMarks";
 import DegreeAudit from "./pages/degree-audit/DegreeAudit";
+import ExportPreviews from "./pages/export-previews/ExportPreviews";
 function App() {
   return (
     <Routes>
@@ -21,6 +22,7 @@ function App() {
       <Route path="/grades-transcript" element={<GradesTranscript />} />
       <Route path="/upload-marks" element={<UploadMarks />}/>
       <Route path="/degree-audit" element={<DegreeAudit />} />
+      <Route path="/export-previews"element={<ExportPreviews />}/>
     </Routes>
   );
 }
